@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game - Retro Arcade</title>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1 class="game-title">MEMORY GAME</h1>
+        
+        <div class="game-info">
+            <div class="info-panel">
+                <div>INTENTOS</div>
+                <div id="attempts">0</div>
+            </div>
+            <div class="info-panel">
+                <div>PARES</div>
+                <div id="matches">0/8</div>
+            </div>
+            <div class="info-panel">
+                <div>TIEMPO</div>
+                <div id="time">00:00</div>
+            </div>
+        </div>
+        
+        <div class="game-board" id="gameBoard"></div>
+        
+        <div class="controls">
+            <button class="btn" onclick="startNewGame()">NUEVO JUEGO</button>
+            <button class="btn" onclick="resetGame()">REINICIAR</button>
+        </div>
+    </div>
+    
+    <div class="overlay hidden" id="overlay"></div>
+    <div class="victory-message hidden" id="victoryMessage">
+        <div class="victory-title">¡VICTORIA!</div>
+        <p>¡Felicitaciones! Has completado el juego.</p>
+        <p>Intentos: <span id="finalAttempts"></span></p>
+        <p>Tiempo: <span id="finalTime"></span></p>
+        <button class="btn" onclick="closeVictoryMessage()">CONTINUAR</button>
+    </div>
+
+    <script src="pares.js"></script>
+</body>
+</html>
